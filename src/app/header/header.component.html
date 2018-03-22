@@ -1,36 +1,104 @@
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Digital Lync</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <!-- <li (click)="loadPage('home')">
-                <a href="#">home</a>
-            </li>
-            <li (click)="loadPage('login')">
-                <a href="#">login</a>
-            </li>
-            <li (click)="loadPage('registration')">
-                <a href="#">registration</a>
-            </li>
-            <li (click)="loadPage('careers')">
-                <a href="#">careers</a>
-            </li> -->
-            <li *ngFor="let item of navPills">
-                <a (click)="loadPage(item)">{{item}}</a>
-            </li>
-        </ul>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+  <div class="image">
+      <!-- <img src="./assets/images/download.png">/ -->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a class="navbar-brand" href="#">Brand</a>/ -->
     </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!-- <li class="active"><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li> -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+              
+              <li (click)="loadPage('settings')">
+                  <a href="#" [routerLink]="['settings']">settings</a>
+              </li>
+              <li (click)="loadPage('monitorass')">
+                  <a href="#" [routerLink]="['monitorass']">monitorass</a>
+              </li>
+              <li (click)="loadPage('Reports')">
+                  <a href="#" [routerLink]="['Reports']">Reports</a>
+              </li>
+              <li (click)="loadPage('Bac Schedhule')">
+                  <a href="#" [routerLink]="['BacSchedhule']">Bac Schedhule</a>
+              </li>
+              <li (click)="loadPage('Schedhule a Test')">
+                  <a href="#" [routerLink]="['Schedhule a Test']">Schedhule a Teste</a>
+              </li>
+              <li class="upper-links"><a class="links" routerLink="/manageusers">Manageusers</a></li>
+              <li (click)="loadPage('support')">
+                <a href="#" [routerLink]="['support']">support</a>
+            </li>
+            <!-- <li class="divider"></li>/ -->
+            <!-- <li><a href="#">Separated link</a></li>/ -->
+            <!-- <li class="divider"></li>/ -->
+            <!-- <li><a href="#">One more separated link</a></li>/ -->
+          </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dui compliance  <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li><a href="#">Something else here</a></li>
+              <!-- <li class="divider"></li>/ -->
+              <!-- <li><a href="#">Separated link</a></li>/ -->
+              <!-- <li class="divider"></li>/ -->
+              <!-- <li><a href="#">One more separated link</a></li>/ -->
+            </ul>
+          </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <!-- <input type="text" class="form-control" placeholder="Search">/ -->
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button>/ -->
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li><a href="#">Link</a></li>/ -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">login <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <!-- <li><a href="#"></a></li>
+            <li><a href="#">edit Profile</a></li>
+            <li><a href="#">change Profile Picture></a></li>
+           
+            <li><a href="#">Change password</a></li>
+            <li (click)="loadPage('signin')">
+                <a href="#" [routerLink]="['signin']">signin</a>
+            </li> -->
+            <li class="upper-links"><a class="links" routerLink="/login">login</a></li>
+            <!-- <li class="upper-links"><a class="links" routerLink="/logout">logout</a></li>/ -->
+           
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
-<div *ngIf="pageName == 'home'">
-    <app-body></app-body>
-</div>
-<div *ngIf="pageName == 'login'">
-    <app-login></app-login>
-</div>
-<div *ngIf="pageName == 'registration'">
-    <app-registration></app-registration>
-</div>
-<div *ngIf="pageName == 'careers'">
-    <app-careers></app-careers>
 </div>
